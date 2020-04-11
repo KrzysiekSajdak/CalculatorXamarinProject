@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CalculatorXamarin.MainPage">
-    <Grid Padding="10">
+    <Grid
+        BackgroundColor="#0F0F0F"
+        Padding="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -13,6 +15,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="48"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -21,148 +24,216 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Label
-            x:Name="lblResult"
+            x:Name="lblShowYourCalculations"
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="4"
-            Text="123"
-            FontSize="70"
+            Text=""
+            FontSize="14"
+            TextColor="White"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="EndAndExpand"
+            LineBreakMode="CharacterWrap"
+            >
+
+        </Label>
+        <Label
+            x:Name="lblResult"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Text=""
+            TextColor="White"
+            FontSize="60"
             FontAttributes="Italic"
             HorizontalOptions="EndAndExpand"
             VerticalOptions="EndAndExpand"
+            LineBreakMode="HeadTruncation"
             ></Label>
         <Button
             x:Name="btnClear"
+            BackgroundColor="#D68238"
+            TextColor="White"
             Grid.Column="0"
-            Grid.Row="1"
+            Grid.Row="2"
             FontSize="35"
             CornerRadius="45"
+            Clicked="ClearOnClicked"
             Text="AC"></Button>
         <Button
             x:Name="btnPlusMinus"
+            BackgroundColor="#87B053"
+            TextColor="White"
             Grid.Column="1"
-            Grid.Row="1"
+            Grid.Row="2"
             FontSize="35"
             CornerRadius="45"
+            Clicked="PlusMinusOnClicked"
             Text="+/-"></Button>
         <Button
             x:Name="btnPrecent"
+            BackgroundColor="#87B053"
+            TextColor="White"
             Grid.Column="2"
-            Grid.Row="1"
+            Grid.Row="2"
             FontSize="35"
             CornerRadius="45"
+            Clicked="PrecentOnClicked"
             Text="%"></Button>
         <Button
             x:Name="btnDivide"
+            BackgroundColor="#44A8C2"
+            TextColor="White"
             Grid.Column="3"
-            Grid.Row="1"
+            Grid.Row="2"
             FontSize="35"
             CornerRadius="45"
+            Clicked="DivideOnClicked"
             Text="÷"></Button>
         <Button
             x:Name="btn7"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="0"
-            Grid.Row="2"
+            Grid.Row="3"
             FontSize="35"
             CornerRadius="45"
+            Clicked="SevenOnClicked"
             Text="7"></Button>
         <Button
             x:Name="btn8"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="1"
-            Grid.Row="2"
+            Grid.Row="3"
             FontSize="35"
             CornerRadius="45"
+            Clicked="EightOnClicked"
             Text="8"></Button>
         <Button
             x:Name="btn9"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="2"
-            Grid.Row="2"
+            Grid.Row="3"
             FontSize="35"
             CornerRadius="45"
+            Clicked="NineOnClicked"
             Text="9"></Button>
         <Button
             x:Name="btnMultiply"
+            BackgroundColor="#44A8C2"
+            TextColor="White"
             Grid.Column="3"
-            Grid.Row="2"
+            Grid.Row="3"
             FontSize="26"
             CornerRadius="45"
             Text="x"></Button>
         
         <Button
             x:Name="btn4"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="0"
-            Grid.Row="3"
+            Grid.Row="4"
             FontSize="35"
             CornerRadius="45"
+            Clicked="FourOnClicked"
             Text="4"></Button>
         <Button
             x:Name="btn5"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="1"
-            Grid.Row="3"
+            Grid.Row="4"
             FontSize="35"
             CornerRadius="45"
+            Clicked="FiveOnClicked"
             Text="5"></Button>
         <Button
             x:Name="btn6"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="2"
-            Grid.Row="3"
+            Grid.Row="4"
             FontSize="35"
             CornerRadius="45"
+            Clicked="SixOnClicked"
             Text="6"></Button>
         <Button
             x:Name="btnMinus"
+            BackgroundColor="#44A8C2"
+            TextColor="White"
             Grid.Column="3"
-            Grid.Row="3"
+            Grid.Row="4"
             FontSize="35"
             CornerRadius="45"
             Text="-"></Button>
         <Button
             x:Name="btn1"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="0"
-            Grid.Row="4"
+            Grid.Row="5"
             FontSize="35"
             CornerRadius="45"
+            Clicked="OneOnClicked"
             Text="1"></Button>
         <Button
             x:Name="btn2"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="1"
-            Grid.Row="4"
+            Grid.Row="5"
             FontSize="35"
             CornerRadius="45"
+            Clicked="TwoOnClicked"
             Text="2"></Button>
         <Button
             x:Name="btn3"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="2"
-            Grid.Row="4"
+            Grid.Row="5"
             FontSize="35"
             CornerRadius="45"
+            Clicked="ThreeOnClicked"
             Text="3"></Button>
         <Button
             x:Name="btnPlus"
+            BackgroundColor="#44A8C2"
+            TextColor="White"
             Grid.Column="3"
-            Grid.Row="4"
+            Grid.Row="5"
             FontSize="35"
             CornerRadius="45"
             Text="+"></Button>
         <Button
             x:Name="btn0"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="0"
-            Grid.Row="5"
+            Grid.Row="6"
             FontSize="35"
             CornerRadius="45"
+            Clicked="ZeroOnClicked"
             Text="0"></Button>
         <Button
             x:Name="btnDot"
+            BackgroundColor="#666666"
+            TextColor="White"
             Grid.Column="1"
-            Grid.Row="5"
+            Grid.Row="6"
             FontSize="35"
             CornerRadius="45"
             Text=","></Button>
         <Button
+            BackgroundColor="#C6456D  "
+            TextColor="White"
             x:Name="btnEqual"
             Grid.Column="2"
             Grid.ColumnSpan="2"
-            Grid.Row="5"
+            Grid.Row="6"
             FontSize="35"
             CornerRadius="45"
             Text="="></Button>
